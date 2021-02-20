@@ -31,6 +31,9 @@ spec:
             secretKyRef:
             key: MYSQL_ROOT_PASSWORD
             name: credentials 
+        volumeMounts:
+          - mountPath: /var/www/html
+            name: wordpress-persistent-storage
         ports:
         - containerPort: 80
         resources:
@@ -40,3 +43,7 @@ spec:
           limits:
             cpu: 1000m
             memory: 512Mi
+      volumes:
+      - name: wordpress-persistent-storage
+        persistentVolumeClaim:
+          claimName: wordpress-pvc
