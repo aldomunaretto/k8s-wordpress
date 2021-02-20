@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: wordpress
+  namespace: wordpress
+spec:
+  rules:
+  - host: wordpress-35-240-97-149.nip.io
+    http:
+      paths:
+      - backend:
+          serviceName: wordpress
+          servicePort: 80
