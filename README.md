@@ -11,5 +11,10 @@ kubectl create namespace wordpress
 kubectl -n wordpress create secret generic credentials --from-literal=MYSQL_ROOT_PASSWORD=password
 ```
 
+```
+para el network policy
+kubectl -n wordpress label namespace wordpress app=wordpress
+```
+
 3. Create DNS Wildcard for your IP Address
 `nip.io`
